@@ -33,6 +33,15 @@
     align-items: center;
 
 }
+.meus-filmes button {
+    background-color: crimson;
+    padding: 8px;
+    border-width: 0;
+    border-radius: 5px;
+    color: #FFF;
+    font-weight: bold;
+    cursor: pointer;
+}
 
 .meus-filmes div a {
     text-decoration: none;

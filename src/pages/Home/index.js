@@ -4,9 +4,6 @@ import './home.css'
 
 import { Link } from "react-router-dom";
 
-// Url da API: movie/now_playing?api_key=2f80d2c6cee2d978397b2ef6c5ba08a0&language=pt-BR
-
-//https://api.themoviedb.org/3/movie/now_playing?api_key=2f80d2c6cee2d978397b2ef6c5ba08a0&language=pt-BR
 
 export default function Home(){
     const [filmes, setFilmes] = useState([]);
@@ -36,7 +33,7 @@ export default function Home(){
             ) : (
             <div className="container">
                 <div className="lista-filmes">
-                    {filmes.map((filme, index) => (
+                    {filmes.map((filme) => (
                         <article key={filme.id}>
                             <strong >{filme.title}</strong>
                             <img src={`https://image.tmdb.org/t/p/original/${filme.backdrop_path}`} alt={filme.title} />

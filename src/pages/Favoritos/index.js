@@ -1,5 +1,6 @@
 import { useState, useLayoutEffect } from "react"
 import { Link } from "react-router-dom";
+import { toast } from "react-toastify";
 import "./favoritos.css"
 
 export default function Favoritos(){
@@ -18,6 +19,7 @@ export default function Favoritos(){
         setFilmes(filtroFilmes)
 
         localStorage.setItem("@FILME", JSON.stringify(filtroFilmes))
+        toast.success("Filme removido com sucesso!")
     }
     return(
         <div className="meus-filmes">

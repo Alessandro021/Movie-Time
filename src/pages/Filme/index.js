@@ -1,5 +1,6 @@
 import { useState, useLayoutEffect } from "react"
 import { useParams, useNavigate } from "react-router-dom"
+import {toast} from 'react-toastify'
 import api from '../../services/api.js'
 
 import './filme.css'
@@ -42,13 +43,13 @@ export default function Filme(){
         const hasFilme = filmesSalvos.some( (filmesSalvo) => filmesSalvo.id === filme.id )
 
         if(hasFilme){
-            alert("ESSE FILME JA ESTA NA LISTA")
+            toast.warn("Esse filme já esta salvo na sua lista.")
             return;
         }
 
         filmesSalvos.push(filme)
         localStorage.setItem("@FILME", JSON.stringify(filmesSalvos));
-        alert("FILME SALVO COM SUCESSO!!")
+        toast.success("Filme salvo com sucesso!")
     }
     return(
         !loading ? (
